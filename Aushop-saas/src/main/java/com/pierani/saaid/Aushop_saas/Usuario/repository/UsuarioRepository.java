@@ -10,13 +10,13 @@ import java.util.UUID;
 
 public interface UsuarioRepository extends JpaRepository<UsuarioPf , UUID> {
 
-    Optional<UsuarioPf> findByEmail(String usuarioEmail); // Método para encontrar usuário por email
+    Optional<UsuarioPf> findByEmail(String email); // Método para encontrar usuário por email
 
-    boolean existsByUsuarioEmail(String usuarioEmail); // Verifica se o email já está cadastrado
+    boolean existsByEmail(String email); // Verifica se o email já está cadastrado
 
-    Optional<UsuarioPf> findById(String id);
+    Optional<UsuarioPf> findById(UUID id);
 
-    Optional<UsuarioPf> findByName(String usuarioName);
+    Optional<UsuarioPf> findByNome(String nome);
 
     List<UsuarioPf> findAll();
 

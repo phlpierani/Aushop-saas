@@ -20,6 +20,8 @@ public class UsuarioService {
                 .nome(usuarioRequestPf.getNome())
                 .email(usuarioRequestPf.getEmail())
                 .senha(usuarioRequestPf.getSenha())
+                .cpf(usuarioRequestPf.getCpf())
+                .telefone(usuarioRequestPf.getTelefone())
                 .build();
 
         log.info("Usuário cadastrado com sucesso");
