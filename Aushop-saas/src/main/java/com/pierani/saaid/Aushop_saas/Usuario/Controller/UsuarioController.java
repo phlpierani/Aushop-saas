@@ -1,6 +1,6 @@
 package com.pierani.saaid.Aushop_saas.Usuario.Controller;
 
-import com.pierani.saaid.Aushop_saas.Usuario.Service.UsuarioService;
+import com.pierani.saaid.Aushop_saas.Usuario.Service.UsuarioImpl;
 import com.pierani.saaid.Aushop_saas.Usuario.dto.UsuarioRequestPf;
 import com.pierani.saaid.Aushop_saas.Usuario.dto.UsuarioResponsePf;
 import com.pierani.saaid.Aushop_saas.Usuario.repository.UsuarioRepository;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class UsuarioController {
 
     @Autowired
-    private UsuarioService usuarioService;
+    private UsuarioImpl usuarioImpl;
 
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -22,7 +22,7 @@ public class UsuarioController {
     @PostMapping("/cadastrar")
     public ResponseEntity<UsuarioResponsePf> cadastrar(@Valid @RequestBody
                                                            UsuarioRequestPf usuarioRequestPf) {
-        var usuario = usuarioService.cadastrar(usuarioRequestPf);
+        var usuario = usuarioImpl.cadastrar(usuarioRequestPf);
 
         var usuarioResponsePf = UsuarioResponsePf.builder()
                 .id(usuario.getId().toString())
