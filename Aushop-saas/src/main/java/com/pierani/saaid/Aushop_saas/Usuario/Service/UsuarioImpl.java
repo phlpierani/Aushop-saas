@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-public class UsuarioService {
+public class UsuarioImpl {
 
     @Autowired
     private UsuarioRepository usuarioRepository;

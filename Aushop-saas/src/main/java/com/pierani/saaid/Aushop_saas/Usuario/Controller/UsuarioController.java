@@ -1,7 +1,39 @@
 package com.pierani.saaid.Aushop_saas.Usuario.Controller;
 
-import org.springframework.stereotype.Controller;
+import com.pierani.saaid.Aushop_saas.Usuario.Service.UsuarioService;
+import com.pierani.saaid.Aushop_saas.Usuario.dto.UsuarioRequestPf;
+import com.pierani.saaid.Aushop_saas.Usuario.dto.UsuarioResponsePf;
+import com.pierani.saaid.Aushop_saas.Usuario.repository.UsuarioRepository;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
+@RequestMapping("/usuarios/pf")
 public class UsuarioController {
+
+    @Autowired
+    private UsuarioService usuarioService;
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
+    @PostMapping("/cadastrar")
+    public ResponseEntity<UsuarioResponsePf> cadastrar(@Valid @RequestBody
+                                                           UsuarioRequestPf usuarioRequestPf) {
+        var usuario = usuarioService.cadastrar(usuarioRequestPf);
+
+        var usuarioResponsePf = UsuarioResponsePf.builder()
+                .id(usuario.getId().toString())
+                .nome(usuario.getNome())
+                .email(usuario.getEmail())
+                .cpf(usuario.getCpf())
+                .telefone(usuario.getTelefone())
+                .endereco(usuario.getEndereco())
+                .build();
+
+        return ResponseEntity.status(201).body(usuarioResponsePf);
+
+    }
 }
