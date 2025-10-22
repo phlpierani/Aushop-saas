@@ -1,7 +1,6 @@
 package com.pierani.saaid.Aushop_saas.Usuario.repository;
 
-import com.pierani.saaid.Aushop_saas.Usuario.domain.UsuarioPf;
-import jakarta.persistence.Id;
+import com.pierani.saaid.Aushop_saas.Usuario.domain.UsuarioPf.UsuarioPf;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -20,5 +19,4 @@ public interface UsuarioRepository extends JpaRepository<UsuarioPf , UUID> {
 
     List<UsuarioPf> findAll();
 
-    List<UsuarioPf> findAllByUsuarioNameContainingIgnoreCase(String nome);
 }

@@ -1,4 +1,4 @@
-package com.pierani.saaid.Aushop_saas.Usuario.dto;
+package com.pierani.saaid.Aushop_saas.Usuario.domain.UsuarioPf.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

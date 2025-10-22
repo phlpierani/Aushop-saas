@@ -1,4 +1,4 @@
-package com.pierani.saaid.Aushop_saas.Usuario.dto;
+package com.pierani.saaid.Aushop_saas.Usuario.domain.UsuarioPf.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -28,5 +28,8 @@ public class UsuarioRequestPf { // Classe DTO para representar os dados de requi
     @NotBlank(message = "CPF é obrigatório")
     @Size(min = 11, max = 11, message = "CPF deve ter 11 caracteres")
     private String cpf;
+
+    @NotBlank(message = "Endereço é obrigatório")
+    private String endereco;
 
 }

@@ -1,8 +1,8 @@
 package com.pierani.saaid.Aushop_saas.Usuario.Controller;
 
 import com.pierani.saaid.Aushop_saas.Usuario.Service.UsuarioImpl;
-import com.pierani.saaid.Aushop_saas.Usuario.dto.UsuarioRequestPf;
-import com.pierani.saaid.Aushop_saas.Usuario.dto.UsuarioResponsePf;
+import com.pierani.saaid.Aushop_saas.Usuario.domain.UsuarioPf.dto.UsuarioRequestPf;
+import com.pierani.saaid.Aushop_saas.Usuario.domain.UsuarioPf.dto.UsuarioResponsePf;
 import com.pierani.saaid.Aushop_saas.Usuario.repository.UsuarioRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

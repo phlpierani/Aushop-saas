@@ -1,4 +1,4 @@
-package com.pierani.saaid.Aushop_saas.Usuario.domain;
+package com.pierani.saaid.Aushop_saas.Usuario.domain.UsuarioPf;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -39,6 +39,4 @@ public class UsuarioPf implements Serializable {
 
     @Column(nullable = false)
     private String cpf;
-
-
 }

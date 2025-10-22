@@ -1,7 +1,7 @@
 package com.pierani.saaid.Aushop_saas.Usuario.Service;
 
-import com.pierani.saaid.Aushop_saas.Usuario.domain.UsuarioPf;
-import com.pierani.saaid.Aushop_saas.Usuario.dto.UsuarioRequestPf;
+import com.pierani.saaid.Aushop_saas.Usuario.domain.UsuarioPf.UsuarioPf;
+import com.pierani.saaid.Aushop_saas.Usuario.domain.UsuarioPf.dto.UsuarioRequestPf;
 import com.pierani.saaid.Aushop_saas.Usuario.repository.UsuarioRepository;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +22,7 @@ public class UsuarioImpl {
                 .senha(usuarioRequestPf.getSenha())
                 .cpf(usuarioRequestPf.getCpf())
                 .telefone(usuarioRequestPf.getTelefone())
+                .endereco(usuarioRequestPf.getEndereco())
                 .build();
 
         log.info("Usuário cadastrado com sucesso");
