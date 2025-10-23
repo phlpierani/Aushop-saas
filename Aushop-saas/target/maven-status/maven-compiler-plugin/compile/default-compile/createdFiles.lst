@@ -1,0 +1,11 @@
+com\pierani\saaid\Aushop_saas\AushopSaasApplication.class
+com\pierani\saaid\Aushop_saas\Usuario\Controller\UsuarioController.class
+com\pierani\saaid\Aushop_saas\Usuario\domain\UsuarioPj.class
+com\pierani\saaid\Aushop_saas\Usuario\domain\UsuarioPf$UsuarioPfBuilder.class
+com\pierani\saaid\Aushop_saas\Usuario\domain\UsuarioPf.class
+com\pierani\saaid\Aushop_saas\Usuario\dto\UsuarioResponsePf$UsuarioResponsePfBuilder.class
+com\pierani\saaid\Aushop_saas\Usuario\dto\UsuarioRequestPf$UsuarioRequestPfBuilder.class
+com\pierani\saaid\Aushop_saas\Usuario\dto\UsuarioRequestPf.class
+com\pierani\saaid\Aushop_saas\Usuario\dto\UsuarioResponsePf.class
+com\pierani\saaid\Aushop_saas\Usuario\Service\UsuarioImpl.class
+com\pierani\saaid\Aushop_saas\Usuario\repository\UsuarioRepository.class

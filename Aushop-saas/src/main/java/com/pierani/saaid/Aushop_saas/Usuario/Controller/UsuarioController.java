@@ -34,6 +34,10 @@ public class UsuarioController {
                 .build();
 
         return ResponseEntity.status(201).body(usuarioResponsePf);
+    }
 
+    @GetMapping("/listar")
+    public ResponseEntity<UsuarioResponsePf> findByEmail(@PathVariable String email) {
+        return null;
     }
 }
