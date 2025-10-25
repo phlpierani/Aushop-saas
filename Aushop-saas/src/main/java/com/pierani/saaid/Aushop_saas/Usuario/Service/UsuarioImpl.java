@@ -54,4 +54,25 @@ public class UsuarioImpl {
     public boolean existsByEmail(String email) {
         return usuarioRepository.existsByEmail(email);
     }
+
+    public UsuarioPf delete(java.util.UUID id) {
+        UsuarioPf usuario = findById(id);
+        usuarioRepository.delete(usuario);
+        log.info("Usuário deletado com sucesso");
+        return usuario;
+    }
+
+    public UsuarioPf atualizar(java.util.UUID id, @Valid UsuarioRequestPf usuarioRequestPf) {
+        UsuarioPf usuarioExistente = findById(id);
+
+        usuarioExistente.setNome(usuarioRequestPf.getNome());
+        usuarioExistente.setEmail(usuarioRequestPf.getEmail());
+        usuarioExistente.setSenha(usuarioRequestPf.getSenha());
+        usuarioExistente.setCpf(usuarioRequestPf.getCpf());
+        usuarioExistente.setTelefone(usuarioRequestPf.getTelefone());
+        usuarioExistente.setEndereco(usuarioRequestPf.getEndereco());
+
+        log.info("Usuário atualizado com sucesso");
+        return usuarioRepository.save(usuarioExistente);
+    }
 }
