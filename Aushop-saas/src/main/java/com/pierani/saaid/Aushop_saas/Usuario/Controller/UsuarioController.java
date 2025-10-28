@@ -77,7 +77,7 @@ public class UsuarioController {
         return ResponseEntity.ok(toResponse(usuarioDeletado));
     }
 
-    // ✅ Método utilitário para converter entidade -> response
+    //  Metodo utilitário para converter entidade - response
     private UsuarioResponsePf toResponse(UsuarioPf usuario) {
         return UsuarioResponsePf.builder()
                 .id(usuario.getId().toString())

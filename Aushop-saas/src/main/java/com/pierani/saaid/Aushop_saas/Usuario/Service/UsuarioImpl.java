@@ -52,6 +52,7 @@ public class UsuarioImpl {
     }
 
     public boolean existsByEmail(String email) {
+        log.info("Esse email já está cadastrado");
         return usuarioRepository.existsByEmail(email);
     }
 
