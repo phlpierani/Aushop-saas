@@ -30,6 +30,7 @@ public class UsuarioController {
                 .cpf(usuario.getCpf())
                 .telefone(usuario.getTelefone())
                 .endereco(usuario.getEndereco())
+                .plano(usuario.getPlano() != null ? usuario.getPlano().getNomePlano() : null)
                 .build();
 
         return ResponseEntity.status(201).body(usuarioResponsePf);
@@ -86,6 +87,7 @@ public class UsuarioController {
                 .cpf(usuario.getCpf())
                 .telefone(usuario.getTelefone())
                 .endereco(usuario.getEndereco())
+                .plano(usuario.getPlano() != null ? usuario.getPlano().getNomePlano() : null)
                 .build();
     }
 }

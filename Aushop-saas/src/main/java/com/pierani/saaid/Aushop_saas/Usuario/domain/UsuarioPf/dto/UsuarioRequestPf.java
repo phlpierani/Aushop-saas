@@ -1,5 +1,6 @@
 package com.pierani.saaid.Aushop_saas.Usuario.domain.UsuarioPf.dto;
 
+import com.pierani.saaid.Aushop_saas.Planos.domain.PlanosEnum;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -31,5 +32,8 @@ public class UsuarioRequestPf { // Classe DTO para representar os dados de requi
 
     @NotBlank(message = "Endereço é obrigatório")
     private String endereco;
+
+    @NotNull(message = "Tipo do plano é obrigatório")
+    private PlanosEnum tipoPlano;
 
 }

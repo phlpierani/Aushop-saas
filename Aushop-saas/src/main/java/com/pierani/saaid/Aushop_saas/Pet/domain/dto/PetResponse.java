@@ -13,7 +13,7 @@ public class PetResponse {
 
     private String nome;
 
-    private String raça;
+    private String raca;
 
     private String tipo;
 

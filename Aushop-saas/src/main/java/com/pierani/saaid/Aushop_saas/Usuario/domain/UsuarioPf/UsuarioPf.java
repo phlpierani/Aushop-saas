@@ -1,5 +1,6 @@
 package com.pierani.saaid.Aushop_saas.Usuario.domain.UsuarioPf;
 
+import com.pierani.saaid.Aushop_saas.Planos.domain.Planos;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -41,4 +42,8 @@ public class UsuarioPf implements Serializable {
 
     @Column(nullable = false)
     private String cpf;
+
+    @ManyToOne
+    @JoinColumn(name = "plano_id", nullable = false)
+    private Planos plano;
 }

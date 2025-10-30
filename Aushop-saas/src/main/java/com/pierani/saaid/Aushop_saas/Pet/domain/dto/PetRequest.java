@@ -15,7 +15,7 @@ public class PetRequest {
     private String nome;
 
     @NotBlank(message = "Raça é obrigatória")
-    private String raça;
+    private String raca;
 
     @NotBlank(message = "Tipo é obrigatório")
     private String tipo;

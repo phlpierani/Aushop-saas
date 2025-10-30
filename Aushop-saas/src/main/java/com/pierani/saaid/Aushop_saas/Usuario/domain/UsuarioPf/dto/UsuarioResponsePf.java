@@ -17,5 +17,6 @@ public class UsuarioResponsePf { // Classe de resposta para usuário pessoa fís
     private String cpf;
     private String telefone;
     private String endereco;
+    private String plano;
 
 }

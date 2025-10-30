@@ -1,5 +1,7 @@
 package com.pierani.saaid.Aushop_saas.Usuario.Service;
 
+import com.pierani.saaid.Aushop_saas.Planos.domain.Planos;
+import com.pierani.saaid.Aushop_saas.Planos.repository.PlanoRepository;
 import com.pierani.saaid.Aushop_saas.Usuario.domain.UsuarioPf.UsuarioPf;
 import com.pierani.saaid.Aushop_saas.Usuario.domain.UsuarioPf.dto.UsuarioRequestPf;
 import com.pierani.saaid.Aushop_saas.Usuario.repository.UsuarioRepository;
@@ -18,7 +20,13 @@ public class UsuarioImpl {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    @Autowired
+    private PlanoRepository planoRepository;
+
     public UsuarioPf cadastrar(@Valid UsuarioRequestPf usuarioRequestPf) {
+        Planos plano = planoRepository.findByTipoPlano(usuarioRequestPf.getTipoPlano())
+                .orElseThrow(() -> new RuntimeException("Plano não encontrado"));
+
         UsuarioPf usuario = UsuarioPf.builder()
                 .nome(usuarioRequestPf.getNome())
                 .email(usuarioRequestPf.getEmail())
@@ -26,9 +34,9 @@ public class UsuarioImpl {
                 .cpf(usuarioRequestPf.getCpf())
                 .telefone(usuarioRequestPf.getTelefone())
                 .endereco(usuarioRequestPf.getEndereco())
+                .plano(plano)
                 .build();
 
-        log.info("Usuário cadastrado com sucesso");
         return usuarioRepository.save(usuario);
     }
 
