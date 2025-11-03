@@ -44,6 +44,6 @@ public class UsuarioPf implements Serializable {
     private String cpf;
 
     @ManyToOne
-    @JoinColumn(name = "plano_id", nullable = false)
+    @JoinColumn(name = "plano_id", nullable = true)
     private Planos plano;
 }

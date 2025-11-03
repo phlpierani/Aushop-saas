@@ -10,7 +10,6 @@ import java.util.UUID;
 @Data
 @Builder
 public class PetRequest {
-
     @NotBlank(message = "Nome é obrigatório")
     private String nome;
 
@@ -26,7 +25,6 @@ public class PetRequest {
     @NotNull(message = "Peso é obrigatório")
     private double peso;
 
-    // PetRequest.java
-    @NotNull(message = "Tutor é obrigatório")
-    private UUID tutorId;
+    @NotBlank(message = "E-mail do tutor é obrigatório")
+    private String tutorEmail;
 }

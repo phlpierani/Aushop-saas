@@ -21,7 +21,7 @@ public class PetImpl {
     private UsuarioRepository usuarioRepository;
 
     public Pet cadastrar(@Valid PetRequest petRequest){
-        UsuarioPf tutor = usuarioRepository.findById(petRequest.getTutorId())
+        UsuarioPf tutor = usuarioRepository.findByEmail(petRequest.getTutorEmail())
                 .orElseThrow(() -> new RuntimeException("Tutor não encontrado"));
         Pet pet = Pet.builder()
                 .nome(petRequest.getNome())
