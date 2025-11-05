@@ -1,5 +1,6 @@
 package com.pierani.saaid.Aushop_saas.Assinaturas.Controller;
 
+import com.pierani.saaid.Aushop_saas.Assinaturas.Mapper.AssinaturaMapper;
 import com.pierani.saaid.Aushop_saas.Assinaturas.domain.Assinatura;
 import com.pierani.saaid.Aushop_saas.Assinaturas.domain.dto.AssinaturaRequest;
 import com.pierani.saaid.Aushop_saas.Assinaturas.domain.dto.AssinaturaResponse;
@@ -20,19 +21,21 @@ public class AssinaturaController {
 
     private final AssinaturaImpl assinaturaImpl;
 
+    private final AssinaturaMapper assinaturaMapper;
+
     @PostMapping("/cadastrar/{emailUsuario}")
     public ResponseEntity<AssinaturaResponse> cadastrar(
             @PathVariable String emailUsuario,
             @Valid @RequestBody AssinaturaRequest request) {
         var assinatura = assinaturaImpl.criarAssinatura(emailUsuario, request);
-        return ResponseEntity.status(201).body(toResponse(assinatura));
+        return ResponseEntity.status(201).body(assinaturaMapper.toResponse(assinatura));
     }
 
     @GetMapping("/listar-todas")
     public ResponseEntity<List<AssinaturaResponse>> listarTodas() {
         var assinaturas = assinaturaImpl.listarTodas()
                 .stream()
-                .map(this::toResponse)
+                .map(assinaturaMapper::toResponse)
                 .collect(Collectors.toList());
         return ResponseEntity.ok(assinaturas);
     }
@@ -41,7 +44,7 @@ public class AssinaturaController {
     public ResponseEntity<List<AssinaturaResponse>> listarPorUsuario(@PathVariable String emailUsuario) {
         var assinaturas = assinaturaImpl.listarPorUsuario(emailUsuario)
                 .stream()
-                .map(this::toResponse)
+                .map(assinaturaMapper::toResponse)
                 .collect(Collectors.toList());
         return ResponseEntity.ok(assinaturas);
     }
@@ -49,7 +52,7 @@ public class AssinaturaController {
     @GetMapping("/{id}")
     public ResponseEntity<AssinaturaResponse> buscarPorId(@PathVariable UUID id) {
         var assinatura = assinaturaImpl.buscarPorId(id);
-        return ResponseEntity.ok(toResponse(assinatura));
+        return ResponseEntity.ok(assinaturaMapper.toResponse(assinatura));
     }
 
     @PutMapping("/cancelar/{id}")
@@ -64,16 +67,5 @@ public class AssinaturaController {
             @RequestParam String nomePlano) {
         boolean existe = assinaturaImpl.existeAssinaturaAtiva(emailUsuario, nomePlano);
         return ResponseEntity.ok(existe);
-    }
-
-    private AssinaturaResponse toResponse(Assinatura assinatura) {
-        return AssinaturaResponse.builder()
-                .nomeUsuario(assinatura.getUsuario().getNome())
-                .nomePlano(assinatura.getPlanos().getNomePlano())
-                .dataInicio(assinatura.getDataInicio())
-                .dataExpiracao(assinatura.getDataExpiracao())
-                .status(assinatura.getStatus())
-                .build();
-
     }
 }

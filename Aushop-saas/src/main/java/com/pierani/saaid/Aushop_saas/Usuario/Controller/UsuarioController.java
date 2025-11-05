@@ -1,5 +1,6 @@
 package com.pierani.saaid.Aushop_saas.Usuario.Controller;
 
+import com.pierani.saaid.Aushop_saas.Usuario.Mapper.UsuarioMapper;
 import com.pierani.saaid.Aushop_saas.Usuario.Service.UsuarioImpl;
 import com.pierani.saaid.Aushop_saas.Usuario.domain.UsuarioPf.UsuarioPf;
 import com.pierani.saaid.Aushop_saas.Usuario.domain.UsuarioPf.dto.UsuarioRequestPf;
@@ -17,6 +18,9 @@ public class UsuarioController {
 
     @Autowired
     private UsuarioImpl usuarioImpl;
+
+    @Autowired
+    private UsuarioMapper usuarioMapper;
 
     @PostMapping("/cadastrar")
     public ResponseEntity<UsuarioResponsePf> cadastrar(@Valid @RequestBody
@@ -38,17 +42,17 @@ public class UsuarioController {
 
     @GetMapping("/email/{email}")
     public ResponseEntity<UsuarioResponsePf> findByEmail(@PathVariable String email) {
-        return ResponseEntity.ok(toResponse(usuarioImpl.findByEmail(email)));
+        return ResponseEntity.ok(usuarioMapper.toResponse(usuarioImpl.findByEmail(email)));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<UsuarioResponsePf> findById(@PathVariable UUID id) {
-        return ResponseEntity.ok(toResponse(usuarioImpl.findById(id)));
+        return ResponseEntity.ok(usuarioMapper.toResponse(usuarioImpl.findById(id)));
     }
 
     @GetMapping("/nome/{nome}")
     public ResponseEntity<UsuarioResponsePf> findByName(@PathVariable String nome) {
-        return ResponseEntity.ok(toResponse(usuarioImpl.findByName(nome)));
+        return ResponseEntity.ok(usuarioMapper.toResponse(usuarioImpl.findByName(nome)));
     }
 
     @GetMapping("/exists/{email}")
@@ -58,9 +62,9 @@ public class UsuarioController {
 
     @GetMapping("/listar-todos")
     public ResponseEntity<List<UsuarioResponsePf>> listarTodos() {
-        var usuariosResponse = usuarioImpl.listarTodos()
-                .stream()
-                .map(this::toResponse)
+        var usuarios = usuarioImpl.listarTodos();
+        var usuariosResponse = usuarios.stream()
+                .map(usuarioMapper::toResponse)
                 .toList();
         return ResponseEntity.ok(usuariosResponse);
     }
@@ -69,26 +73,13 @@ public class UsuarioController {
     public ResponseEntity<UsuarioResponsePf> atualizar(@PathVariable UUID id,
                                                        @Valid @RequestBody UsuarioRequestPf usuarioRequestPf) {
         var usuarioAtualizado = usuarioImpl.atualizar(id, usuarioRequestPf);
-        return ResponseEntity.ok(toResponse(usuarioAtualizado));
+        return ResponseEntity.ok(usuarioMapper.toResponse(usuarioAtualizado));
     }
 
     @DeleteMapping("/deletar/{id}")
     public ResponseEntity<UsuarioResponsePf> deletar(@PathVariable UUID id) {
         var usuarioDeletado = usuarioImpl.delete(id);
-        return ResponseEntity.ok(toResponse(usuarioDeletado));
-    }
-
-    //  Metodo utilitário para converter entidade - response
-    private UsuarioResponsePf toResponse(UsuarioPf usuario) {
-        return UsuarioResponsePf.builder()
-                .id(usuario.getId().toString())
-                .nome(usuario.getNome())
-                .email(usuario.getEmail())
-                .cpf(usuario.getCpf())
-                .telefone(usuario.getTelefone())
-                .endereco(usuario.getEndereco())
-                .plano(usuario.getPlano() != null ? usuario.getPlano().getNomePlano() : null)
-                .build();
+        return ResponseEntity.ok(usuarioMapper.toResponse(usuarioDeletado));
     }
 }
 

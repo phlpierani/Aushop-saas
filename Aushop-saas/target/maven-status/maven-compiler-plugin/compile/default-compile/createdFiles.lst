@@ -1,8 +1,11 @@
+com\pierani\saaid\Aushop_saas\Planos\Mapper\PlanosMapperImpl.class
 com\pierani\saaid\Aushop_saas\Assinaturas\domain\Assinatura.class
+com\pierani\saaid\Aushop_saas\Usuario\Mapper\UsuarioMapperImpl.class
 com\pierani\saaid\Aushop_saas\Usuario\domain\UsuarioPf\UsuarioPf.class
 com\pierani\saaid\Aushop_saas\Exceptions\BadRequestExceptionDetails$BadRequestExceptionDetailsBuilderImpl.class
 com\pierani\saaid\Aushop_saas\Planos\domain\dto\PlanosRequest$PlanosRequestBuilder.class
 com\pierani\saaid\Aushop_saas\Config\Swagger.class
+com\pierani\saaid\Aushop_saas\Assinaturas\Mapper\AssinaturaMapper.class
 com\pierani\saaid\Aushop_saas\Pet\domain\dto\PetResponse$PetResponseBuilder.class
 com\pierani\saaid\Aushop_saas\Pet\domain\Pet$PetBuilder.class
 com\pierani\saaid\Aushop_saas\Assinaturas\domain\dto\AssinaturaRequest.class
@@ -11,6 +14,7 @@ com\pierani\saaid\Aushop_saas\Usuario\domain\UsuarioPf\dto\UsuarioRequestPf.clas
 com\pierani\saaid\Aushop_saas\Usuario\Service\UsuarioImpl.class
 com\pierani\saaid\Aushop_saas\Assinaturas\domain\AssinaturaStatus.class
 com\pierani\saaid\Aushop_saas\Assinaturas\service\AssinaturaImpl.class
+com\pierani\saaid\Aushop_saas\Pet\Mapper\PetMapper.class
 com\pierani\saaid\Aushop_saas\Assinaturas\domain\dto\AssinaturaRequest$AssinaturaRequestBuilder.class
 com\pierani\saaid\Aushop_saas\Exceptions\ValidationExceptionDetails$ValidationExceptionDetailsBuilder.class
 com\pierani\saaid\Aushop_saas\Planos\Controller\PlanosController.class
@@ -18,6 +22,7 @@ com\pierani\saaid\Aushop_saas\Pet\domain\dto\PetRequest.class
 com\pierani\saaid\Aushop_saas\Pet\domain\dto\PetRequest$PetRequestBuilder.class
 com\pierani\saaid\Aushop_saas\Exceptions\BadRequestExceptionDetails$BadRequestExceptionDetailsBuilder.class
 com\pierani\saaid\Aushop_saas\Assinaturas\Controller\AssinaturaController.class
+com\pierani\saaid\Aushop_saas\Assinaturas\Mapper\AssinaturaMapperImpl.class
 com\pierani\saaid\Aushop_saas\Planos\service\PlanosImpl.class
 com\pierani\saaid\Aushop_saas\Planos\domain\dto\PlanoResponse.class
 com\pierani\saaid\Aushop_saas\Planos\domain\Planos.class
@@ -30,6 +35,7 @@ com\pierani\saaid\Aushop_saas\Exceptions\ValidationExceptionDetails.class
 com\pierani\saaid\Aushop_saas\Pet\Service\PetImpl.class
 com\pierani\saaid\Aushop_saas\Exceptions\ValidationExceptionDetails$ValidationExceptionDetailsBuilderImpl.class
 com\pierani\saaid\Aushop_saas\Planos\domain\Planos$PlanosBuilder.class
+com\pierani\saaid\Aushop_saas\Planos\Mapper\PlanosMapper.class
 com\pierani\saaid\Aushop_saas\Planos\domain\dto\PlanoResponse$PlanoResponseBuilder.class
 com\pierani\saaid\Aushop_saas\Pet\Controller\PetController.class
 com\pierani\saaid\Aushop_saas\AushopSaasApplication.class
@@ -41,9 +47,11 @@ com\pierani\saaid\Aushop_saas\Assinaturas\domain\dto\AssinaturaResponse.class
 com\pierani\saaid\Aushop_saas\Exceptions\ExceptionDetails$ExceptionDetailsBuilderImpl.class
 com\pierani\saaid\Aushop_saas\Pet\repository\PetRepository.class
 com\pierani\saaid\Aushop_saas\Assinaturas\repository\AssinaturaRepository.class
+com\pierani\saaid\Aushop_saas\Usuario\Mapper\UsuarioMapper.class
 com\pierani\saaid\Aushop_saas\Exceptions\ExceptionDetails.class
 com\pierani\saaid\Aushop_saas\Usuario\domain\UsuarioPf\dto\UsuarioRequestPf$UsuarioRequestPfBuilder.class
 com\pierani\saaid\Aushop_saas\Exceptions\BadRequestExceptionDetails.class
+com\pierani\saaid\Aushop_saas\Pet\Mapper\PetMapperImpl.class
 com\pierani\saaid\Aushop_saas\Planos\domain\dto\PlanosRequest.class
 com\pierani\saaid\Aushop_saas\Usuario\domain\UsuarioPf\dto\UsuarioResponsePf.class
 com\pierani\saaid\Aushop_saas\Exceptions\ExceptionDetails$ExceptionDetailsBuilder.class
